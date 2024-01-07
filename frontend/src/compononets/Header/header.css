@@ -1,0 +1,77 @@
+.header {
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+}
+
+.logo img {
+    width: 30%;
+}
+
+.menu {
+    margin-bottom: 0;
+}
+
+.nav_item a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.nav_item a:hover {
+    color: inherit;
+}
+
+.nav_item a.active_link {
+    color: rgb(255, 132, 0);
+}
+
+.mobile_menu {
+    font-size: 1.3rem;
+    color: var(--heading-color);
+    display: none;
+}
+
+.login_btn {
+    background-color: white;
+    border: none;
+}
+
+.login_btn:hover {
+    background-color: aliceblue;
+}
+
+.login_btn a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.reg_btn {
+    background-color: rgb(253, 164, 68);
+    border: none;
+    border-radius: 50px;
+}
+
+.reg_btn a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.reg_btn:hover {
+    background-color: rgb(253, 164, 68);
+}
+
+.sticky_header{
+    width: 100%;
+    height: 76px;
+    line-height: 80px;
+    background: white;
+    position: sticky;
+    top:0;
+    left: 0;
+    box-shadow: 3px 3px 8px -3px #ddd;
+    z-index: 999;
+}

@@ -1,0 +1,167 @@
+.hero_subtitle img {
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+.hero_content h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero_content h1 .highlight {
+    color: rgb(255, 163, 64);
+}
+
+.hero_content p {
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.hero_img-box img,
+.hero_img-box video {
+    width: 100%;
+    height: 340px;
+    border-radius: 20px;
+    border: 1px solid rgb(255, 132, 0);
+    object-fit: cover;
+}
+
+.main_content{
+    margin-top: 12px;
+}
+
+.hero_content{
+    padding-top: 3.5rem;
+}
+
+hero_img-box{
+    padding-top: 2rem;
+}
+
+.service_subtitle{
+    /* font-size: 2.2rem; */
+    font-weight: 600;
+    color:rgb(255, 132, 0);
+    font-family:Lucida Handwriting, cursive;
+}
+
+.service_title{
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+.featured_heading {
+    background-color: rgb(255, 163, 64);
+    border-radius: 50px;
+    width: 9rem;
+    text-align: center;
+    margin-top: 6px;
+}
+
+.featured_subtitle{
+    font-family:cursive;
+}
+
+.featured_tour-title{
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-top: 0.7rem;
+    margin-bottom: 1.3rem;
+}
+
+.experience_heading {
+    background-color: rgb(255, 152, 41);
+    border-radius: 50px;
+    width: 22%;
+    text-align: center;
+}
+
+.experience_subtitle{
+    font-family:cursive;
+}
+
+.experience_content h2{
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+.experience_content p{
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: rgb(85, 86, 87);
+}
+
+.counter_wrapper{
+    margin-top: 2.5rem;
+}
+
+.counter_box span{
+    width:70px;
+    height: 70px;
+    background: rgb(255, 152, 41);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 10px 5px 10px 5px;
+}
+
+.counter_box h6{
+    font-size: 1.2rem;
+    margin-top: 0.7rem;
+    color: rgb(118, 116, 116);
+}
+
+.experience_img img{
+    width: 86%;
+}
+
+.experience_img{
+    text-align: center;;
+}
+
+.gallery_title{
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    margin-top: 1rem;
+}
+
+.masonry_img{
+    transition: .3s;
+}
+
+.masonry_img:hover{
+    transform : scale(0.9);
+}
+
+.testimonial_heading {
+    background-color: rgb(255, 152, 41);
+    border-radius: 50px;
+    width: 11%;
+    text-align: center;
+}
+
+.testimonial_heading {
+    background-color: rgb(255, 152, 41);
+    border-radius: 50px;
+    width: 13%;
+    text-align: center;
+}
+
+.testimonial_subtitle{
+    font-family:cursive;
+}
+
+.testimonial_title{
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+.featured_content{
+    margin-top: 4rem;
+}

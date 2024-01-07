@@ -1,0 +1,11 @@
+.heading {
+    background-color: rgb(255, 171, 81);
+    border-radius: 50px;
+    width: 41%;
+    text-align: center;
+    margin-top: 6px;
+}
+
+.section_subtitle{
+    font-family:cursive;
+}
