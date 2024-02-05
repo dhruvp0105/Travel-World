@@ -1,8 +1,18 @@
-const calculateAvgRating = reviews => {
-    const totalRating = reviews?.reduce((acc, item) => acc + item.rating, 0);
-    const avgRating = totalRating === 0 ? "" : totalRating === 1 ? totalRating : totalRating / reviews.length;
+const calculateAvgRating = (reviews) => {
+    console.log(reviews)
+        if (!Array.isArray(reviews)) {
+            console.error('Input is not an array:', reviews);
 
-    return {avgRating,totalRating}
+            return { totalRating: 0, avgRating: "" };
+          }
+
+
+    const totalRating = reviews.reduce((acc, item) => acc + item.rating, 0);
+
+    const avgRating = reviews.length === 0 ? "" : totalRating / reviews.length;
+
+
+    return { totalRating, avgRating }
 }
 
 export default calculateAvgRating;

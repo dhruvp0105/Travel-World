@@ -1,15 +1,23 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import { Button, Container, Row } from 'reactstrap'
 import logo from '../../assets/images/logo.png'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 import './header.css'
 import { useEffect } from 'react';
+import { AuthContext } from '../context/AuthContect';
 
 const Header = () => {
 
     const headerRef = useRef(null);
+    const navigate = useNavigate()
 
+    const { user, dispatch } = useContext(AuthContext)
+
+    const logout = () => {
+        dispatch({ type: 'LOGOUT' })
+        navigate('/')
+    }
     const stickyHeaderFunc = () => {
         window.addEventListener('scroll', () => {
             if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
@@ -64,8 +72,21 @@ const Header = () => {
 
                         <div className="nav_right d-flex align-items-center gap-4">
                             <div className="nav_btns d-flex align-items-center gap-4">
-                                <Button className='login_btn'><Link to='/login'>Login</Link></Button>
-                                <Button className='reg_btn'><Link to='/register'>Register</Link></Button>
+
+                                {
+                                    user ? (<>
+                                        <h5 className='mb-0'>{user.username}</h5>
+                                        <Button className='btn btn-dark' onClick={logout}>LOGOUT</Button>
+                                    </>
+                                    ) :
+                                        (
+                                            <>
+                                                <Button className='login_btn'><Link to='/login'>Login</Link></Button>
+                                                <Button className='reg_btn'><Link to='/register'>Register</Link></Button>
+                                            </>
+                                        )
+                                }
+
                             </div>
 
                             <span className='mobile_menu'>

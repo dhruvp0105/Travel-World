@@ -6,6 +6,7 @@ import TourDetails from '../pages/TourDetails'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import SearchResultList from '../pages/SearchResultList'
+import SuccessPayment from '../compononets/payment/SuccessPayment'
 
 const Routers = () => {
     return (
@@ -13,11 +14,12 @@ const Routers = () => {
             <Route exact path='/' element={<Navigate to='/home' />} />
             <Route exact path='/home' element={<Home />} />
             <Route exact path='/tours' element={<Tours />} />
-            <Route exact path='/tour/:id' element={<TourDetails />} />
+            <Route exact path='/tour/:_id' element={<TourDetails />} />
             <Route exact path='/login' element={<Login />} />
             <Route exact path='/register' element={<Register />} />
             <Route exact path='/tour/search' element={<SearchResultList />} />
-            <Route exact path='/tours/search' element={<SearchResultList />} />
+            <Route exact path='/paymentsuccess' element={<SuccessPayment />} />
+
         </Routes>
     )
 }

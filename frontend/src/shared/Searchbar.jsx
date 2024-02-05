@@ -5,6 +5,8 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import DriveEtaOutlinedIcon from '@mui/icons-material/DriveEtaOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../utils/config';
 
 const Searchbar = () => {
 
@@ -12,7 +14,9 @@ const Searchbar = () => {
     const distanceRef = useRef(0);
     const maxGroupSizeRef = useRef(0);
 
-    const searchHandler = () => {
+    const navigate = useNavigate()
+
+    const searchHandler = async () => {
         const location = locationRef.current.value;
         const distance = distanceRef.current.value;
         const maxGroupSize = maxGroupSizeRef.current.value;
@@ -20,6 +24,18 @@ const Searchbar = () => {
         if (location === '' || distance === '' || maxGroupSize === '') {
             return alert("All fields are required!")
         }
+
+        const res = await fetch(`${BASE_URL}/tour/search?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`)
+
+        if (!res.ok) {
+            alert("Something went Wrong")
+        }
+
+        const result = await res.json();
+        console.log(result)
+
+        navigate(`/tour/search?city=${location}&distance=${distance}&maxGroupSize=${maxGroupSize}`, { state: result.data })
+
     }
 
     return (

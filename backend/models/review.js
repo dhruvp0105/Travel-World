@@ -1,0 +1,26 @@
+const mongoose = require('mongoose')
+
+const reviewSchema = new mongoose.Schema({
+    productId: {
+        type: mongoose.Types.ObjectId,
+        ref: 'tour'
+    },
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    reviewtext: {
+        type: String,
+        required: true,
+    },
+    rating: {
+        type: Number,
+        required: true,
+        min: 0,
+        max: 5,
+        default: 0
+    }
+}, { timestamps: true })
+
+module.exports = mongoose.model('review', reviewSchema)
