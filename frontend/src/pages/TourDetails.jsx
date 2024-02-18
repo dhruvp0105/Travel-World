@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import '../styles/tour-details.css'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import tours from '../assets/data/Tours'
 import { Button, Col, Container, Form, ListGroup, Row } from 'reactstrap'
 import calculateAvgRating from '../utils/avgRating'
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import SocialDistanceIcon from '@mui/icons-material/SocialDistance';
 import GroupsIcon from '@mui/icons-material/Groups';
 import avatar from '../assets/images/avatar.jpg';
@@ -17,6 +17,8 @@ import { BASE_URL } from '../utils/config'
 import { AuthContext } from '../compononets/context/AuthContect'
 
 const TourDetails = () => {
+
+  const navigate = useNavigate();
 
   const { _id } = useParams();
 
@@ -34,7 +36,8 @@ const TourDetails = () => {
 
   // console.log("Review Data",reviewData)
 
-  console.log("Reviews is ", reviews);
+  // console.log("TourData review", tourData)
+  // console.log("Reviews is ", reviews);
   const { totalRating, avgRating } = calculateAvgRating(reviews);
 
   // console.log("total",totalRating);
@@ -52,34 +55,38 @@ const TourDetails = () => {
     try {
       if (!user || user === undefined || user === null) {
         alert("Please sign in")
+        navigate('/login')
+      }
+      else {
+        const reviewObj = {
+          username: user.username,
+          reviewtext,
+          rating: tourRating
+        }
+        const res = await fetch(`${BASE_URL}/review/${_id}`, {
+          method: 'post',
+          headers: {
+            'content-type': 'application/json'
+          },
+          credentials: 'include',
+          body: JSON.stringify(reviewObj)
+        })
+
+        const result = await res.json();
+        if (!res.ok) {
+          return alert(result.message)
+        }
+
+        alert('review Submitted')
       }
 
-      const reviewObj = {
-        username: user.username,
-        reviewtext,
-        rating: tourRating
-      }
-      const res = await fetch(`${BASE_URL}/review/${_id}`, {
-        method: 'post',
-        headers: {
-          'content-type': 'application/json'
-        },
-        credentials: 'include',
-        body: JSON.stringify(reviewObj)
-      })
-
-      const result = await res.json();
-      if (!res.ok) {
-        return alert(result.message)
-      }
-
-      alert('review Submitted')
       // console.log(result.message)
       // return alert(result.message)
 
     }
     catch (error) {
       alert(error.message)
+      // console.log("Why error", error.message)
     }
 
     // alert(`${reviewtext},${tourRating}`);
@@ -126,7 +133,7 @@ const TourDetails = () => {
 
                     <div className="tour_extra-details">
                       <span><i><LocationCityIcon /></i>{city}</span>
-                      <span><i><AttachMoneyIcon /></i>{price} /per person</span>
+                      <span><i><CurrencyRupeeIcon /></i>{price} /per person</span>
                       <span><i><SocialDistanceIcon /></i>{distance} k/m</span>
                       <span><i><GroupsIcon /></i>{maxGroupSize} people</span>
                     </div>
@@ -152,9 +159,9 @@ const TourDetails = () => {
                       </div>
                     </Form>
 
-                    {/* <ListGroup className='user_reviews'>
+                    <ListGroup className='user_reviews'>
                       {
-                        reviews.map((review) => (
+                        reviews && reviews.map((review) => (
                           <div className="review_item">
                             <img src={avatar} alt='img' />
                             <div className="w-100">
@@ -167,12 +174,12 @@ const TourDetails = () => {
                                   {review.rating}<i><StarOutlinedIcon /></i>
                                 </span>
                               </div>
-                              <h6>{review.reviewText}</h6>
+                              <h6>{review.reviewtext}</h6>
                             </div>
                           </div>
                         ))
                       }
-                    </ListGroup> */}
+                    </ListGroup>
                   </div>
                 </div>
               </Col>

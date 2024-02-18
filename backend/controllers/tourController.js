@@ -42,10 +42,10 @@ const deleteTour = async (req, res) => {
 // get single tour
 const getSingleTour = async (req, res) => {
     const id  = req.params;
-    console.log(id.id);
+    // console.log(id.id);
     try {
         const singleTour = await tour.find({_id:req.params.id}).populate('reviews');
-        console.log(singleTour);
+        // console.log(singleTour);
         res.status(200).json({ success: true, message: 'Successfully fetch tour', data: singleTour })
     } catch (error) {
         res.status(500).json({ success: false, message: 'Failed to fetch single tour' })

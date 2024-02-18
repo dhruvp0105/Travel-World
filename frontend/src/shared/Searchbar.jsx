@@ -42,7 +42,7 @@ const Searchbar = () => {
         <>
             <Col lg='12'>
                 <div className="search_bar">
-                    <Form className='d-flex align-items-center gap-5'>
+                    <Form className='d-flex align-items-center gap-3'>
                         <FormGroup className='form_group form_group-fast d-flex gap-3'>
                             <span>
                                 <LocationOnIcon />

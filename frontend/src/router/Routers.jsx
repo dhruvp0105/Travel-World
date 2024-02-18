@@ -7,6 +7,7 @@ import Login from '../pages/Login'
 import Register from '../pages/Register'
 import SearchResultList from '../pages/SearchResultList'
 import SuccessPayment from '../compononets/payment/SuccessPayment'
+import ContactUs from '../pages/ContactUs'
 
 const Routers = () => {
     return (
@@ -19,6 +20,7 @@ const Routers = () => {
             <Route exact path='/register' element={<Register />} />
             <Route exact path='/tour/search' element={<SearchResultList />} />
             <Route exact path='/paymentsuccess' element={<SuccessPayment />} />
+            <Route exact path='/contact' element={<ContactUs />} />
 
         </Routes>
     )

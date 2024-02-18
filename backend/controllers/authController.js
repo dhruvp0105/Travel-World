@@ -42,7 +42,7 @@ const login = async (req, res) => {
 
         const { password, role, ...rest } = user._doc;
         const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET_KEY, { expiresIn: "1d" })
-        console.log("Login Token is",token)
+        // console.log("Login Token is",token)
 
         res.cookie('accessToken', token, {
             httpOnly: true,

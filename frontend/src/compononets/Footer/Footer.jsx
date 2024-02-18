@@ -126,13 +126,13 @@ const Footer = () => {
                   <span><i><PhoneIcon /></i></span>
                   Phone :
                 </h6>
-                <p className='mb-0'>+91 7778013500</p>
+                <p className='mb-0'>+91 9870239345</p>
               </ListGroupItem>
             </ListGroup>
           </Col>
 
           <Col lg='12' className='text-center pt-5'>
-            <p className='copyright'>Copyright {year}, design and develop by Dhruv Panchal. All rights reserved.</p>
+            <p className='copyright'>Copyright {year}, design and develop by Travel World. All rights reserved.</p>
           </Col>
 
         </Row>

@@ -1,34 +1,40 @@
-.footer{
-    padding-top:70px;
+.footer {
+    padding-top: 70px;
     padding-bottom: 30px;
 }
 
-.footer .logo img{
+.footer .logo img {
     width: 50%;
     margin-bottom: 1rem;
 }
 
-.social_links span a{
+.social_links span a {
     text-decoration: none;
     color: black;
     font-size: 1.2rem;
 }
 
-.footer_link-title{
+.footer_link-title {
     margin-bottom: 1rem;
 }
 
-.footer_quick-links li a{
+.footer_quick-links li a {
     text-decoration: none;
     font-size: 1.1rem;
     color: rgb(40, 39, 39);
 }
 
-.footer_quick-links h6 span i{
+.footer_quick-links h6 span i {
     color: rgb(253, 165, 2);
     font-size: 1.1rem;
 }
 
-.copyright{
+.copyright {
     font-size: 1rem;
+}
+
+@media only screen and (max-width:992px) {
+    h5 {
+        margin-top: 35px;
+    }
 }

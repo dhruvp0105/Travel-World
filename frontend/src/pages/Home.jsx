@@ -64,7 +64,7 @@ const Home = () => {
                 <Container>
                     <Row>
                         <Col lg='3'>
-                            <h5 className='service_subtitle'>What we serve</h5>
+                            <h3 className='service_subtitle'>What we serve</h3>
                             <h3 className='service_title'>We offer our best services</h3>
                         </Col>
 

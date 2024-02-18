@@ -1,7 +1,7 @@
 const calculateAvgRating = (reviews) => {
-    console.log(reviews)
+    // console.log("Review1 is :",reviews)
         if (!Array.isArray(reviews)) {
-            console.error('Input is not an array:', reviews);
+            // console.error('Input is not an array:', reviews);
 
             return { totalRating: 0, avgRating: "" };
           }

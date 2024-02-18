@@ -7,9 +7,6 @@ const useFetch = (url) => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-
-    // console.log("inside the effect" ,url);
-
         const fetchData = async () => {
 
             setLoading(true)
@@ -25,12 +22,7 @@ const useFetch = (url) => {
                 }
 
                 const result = await res.json()
-                
-                console.log("Nice : ",result)
-                console.log("Our key is ",res);
 
-
-                console.log(result.data)
                 setData(result.data)
                 setLoading(false)
             }

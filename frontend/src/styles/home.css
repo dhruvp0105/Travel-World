@@ -1,6 +1,7 @@
 .hero_subtitle img {
     width: 2.3rem;
     height: 2.3rem;
+    margin-top: 5px;
 }
 
 .hero_content h1 {
@@ -28,43 +29,45 @@
     object-fit: cover;
 }
 
-.main_content{
+.main_content {
     margin-top: 12px;
 }
 
-.hero_content{
+.hero_content {
     padding-top: 3.5rem;
 }
 
-hero_img-box{
+hero_img-box {
     padding-top: 2rem;
 }
 
-.service_subtitle{
+.service_subtitle {
     /* font-size: 2.2rem; */
+    margin-top: 10px;
     font-weight: 600;
-    color:rgb(255, 132, 0);
-    font-family:Lucida Handwriting, cursive;
+    color: rgb(255, 132, 0);
+    font-family: Lucida Handwriting, cursive;
 }
 
-.service_title{
+.service_title {
     font-size: 2.2rem;
     font-weight: 500;
 }
 
 .featured_heading {
     background-color: rgb(255, 163, 64);
+    padding: 2px;
     border-radius: 50px;
     width: 9rem;
     text-align: center;
-    margin-top: 6px;
+    margin-top: 1px;
 }
 
-.featured_subtitle{
-    font-family:cursive;
+.featured_subtitle {
+    font-family: cursive;
 }
 
-.featured_tour-title{
+.featured_tour-title {
     font-size: 2.2rem;
     font-weight: 500;
     margin-top: 0.7rem;
@@ -72,33 +75,34 @@ hero_img-box{
 }
 
 .experience_heading {
-    background-color: rgb(255, 152, 41);
+    background-color: rgb(255, 163, 64);
     border-radius: 50px;
     width: 22%;
     text-align: center;
 }
 
-.experience_subtitle{
-    font-family:cursive;
+.experience_subtitle {
+    font-family: cursive;
+    padding: 5px;
 }
 
-.experience_content h2{
+.experience_content h2 {
     font-size: 2.1rem;
     font-weight: 500;
 }
 
-.experience_content p{
+.experience_content p {
     font-size: 1rem;
     margin-top: 1rem;
     color: rgb(85, 86, 87);
 }
 
-.counter_wrapper{
+.counter_wrapper {
     margin-top: 2.5rem;
 }
 
-.counter_box span{
-    width:70px;
+.counter_box span {
+    width: 70px;
     height: 70px;
     background: rgb(255, 152, 41);
     margin: auto;
@@ -111,57 +115,96 @@ hero_img-box{
     border-radius: 10px 5px 10px 5px;
 }
 
-.counter_box h6{
+.counter_box h6 {
     font-size: 1.2rem;
     margin-top: 0.7rem;
     color: rgb(118, 116, 116);
 }
 
-.experience_img img{
+.experience_img img {
     width: 86%;
 }
 
-.experience_img{
-    text-align: center;;
+.experience_img {
+    text-align: center;
+    ;
 }
 
-.gallery_title{
+.gallery_title {
     font-size: 2.2rem;
     margin-bottom: 2.5rem;
     margin-top: 1rem;
 }
 
-.masonry_img{
+.masonry_img {
     transition: .3s;
 }
 
-.masonry_img:hover{
-    transform : scale(0.9);
+.masonry_img:hover {
+    transform: scale(0.9);
 }
 
 .testimonial_heading {
     background-color: rgb(255, 152, 41);
     border-radius: 50px;
-    width: 11%;
+    width: 10%;
     text-align: center;
+    padding: 2px;
 }
 
-.testimonial_heading {
+/* .testimonial_heading {
     background-color: rgb(255, 152, 41);
     border-radius: 50px;
     width: 13%;
     text-align: center;
+} */
+
+.testimonial_subtitle {
+    font-family: cursive;
 }
 
-.testimonial_subtitle{
-    font-family:cursive;
-}
-
-.testimonial_title{
+.testimonial_title {
     font-size: 2.2rem;
     font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-.featured_content{
+.featured_content {
     margin-top: 4rem;
+}
+
+@media only screen and (max-width:992px) {
+    .hero-content h1 {
+        font-size: 2.7rem;
+    }
+
+    .main_content{
+        margin-top: -30px;
+    }
+
+    .featured_subtitle{
+        padding: 1px;
+        margin-top: 5px;
+    }
+
+    .experience_subtitle{
+        padding: 10px;
+    }
+
+    .experience_heading{
+        width: 30%;
+    }
+
+    .featured_heading{
+        margin-top: 40px;
+    }
+
+    .testimonial_heading{
+        width: 30%;
+    }
+
+    .testimonial_subtitle{
+        margin-top: 11px;
+    }
 }

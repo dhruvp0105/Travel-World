@@ -3,9 +3,21 @@
     border-radius: 50px;
     width: 41%;
     text-align: center;
-    margin-top: 6px;
+    margin-top: 10px;
 }
 
 .section_subtitle{
     font-family:cursive;
+    padding: 3px 0px;
+}
+
+@media only screen and (max-width:992px){
+    .heading{
+        width: 60%;
+    }
+
+    .section_subtitle{
+        margin-top: 10px;
+        /* padding: 0px 4px; */
+    }
 }

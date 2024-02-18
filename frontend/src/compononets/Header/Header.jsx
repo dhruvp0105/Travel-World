@@ -10,6 +10,7 @@ import { AuthContext } from '../context/AuthContect';
 const Header = () => {
 
     const headerRef = useRef(null);
+    const menuRef = useRef(null);
     const navigate = useNavigate()
 
     const { user, dispatch } = useContext(AuthContext)
@@ -34,18 +35,22 @@ const Header = () => {
         return window.removeEventListener('scroll', stickyHeaderFunc)
     })
 
+    const toggleMenu = () => {
+        menuRef.current.classList.toggle('show_menu')
+    }
+
     const nav_links = [
         {
             path: '/home',
             display: 'Home'
         },
         {
-            path: '/about',
-            display: 'About'
-        },
-        {
             path: '/tours',
             display: 'Tours'
+        },
+        {
+            path: '/contact',
+            display: 'Contact'
         }
     ]
     return (
@@ -58,7 +63,7 @@ const Header = () => {
                             <img src={logo} alt='logo' />
                         </div>
 
-                        <div className="navigation">
+                        <div className="navigation" ref={menuRef} onClick={toggleMenu}>
                             <ul className='menu d-flex align-items-center gap-5'>
                                 {
                                     nav_links.map((item, index) => (
@@ -89,7 +94,7 @@ const Header = () => {
 
                             </div>
 
-                            <span className='mobile_menu'>
+                            <span className='mobile_menu' onClick={toggleMenu}>
                                 <MenuIcon />
                             </span>
                         </div>

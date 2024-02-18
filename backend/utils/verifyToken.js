@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 
 const verifyToken = (req, res, next) => {
     const token = req.cookies.accessToken
-    console.log("Token is ",token)
+    // console.log("Token is ",token)
     if (!token) {
         return res.status(401).json({ success: false, message: "You are not authorized person" })
     }
@@ -13,7 +13,7 @@ const verifyToken = (req, res, next) => {
             return res.status(401).json({ success: false, message: "token is invalid" })
         }
         req.user = user
-        console.log("User is : ", req.user)
+        // console.log("User is : ", req.user)
         next()
     })
 }

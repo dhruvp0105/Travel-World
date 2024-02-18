@@ -27,7 +27,7 @@ const createBooking = async (req, res) => {
     // console.log("razorpay id is", RAZORPAY_ID_KEY)
     // console.log("Razorpay secret key is", RAZORPAY_SECRET_KEY)
 
-    console.log("Amt : ", req.body.amount)
+    // console.log("Amt : ", req.body.amount)
 
     try {
         const options = {

@@ -38,7 +38,7 @@ const Login = () => {
       })
 
       const result = await res.json()
-      console.log(result.data)
+      // console.log(result.data)
 
       if (!res.ok) {
         alert(result.message)

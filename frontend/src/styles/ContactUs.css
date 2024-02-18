@@ -1,0 +1,19 @@
+.sub_btn{
+    background: orange;
+    color: white;
+    border: none;
+    font-weight: 600;
+    width: 30%;
+    padding: 1%;
+    border-radius: 50px;
+}
+
+.content{
+    color: rgb(253, 166, 4);
+}
+
+@media only screen and (max-width:912px){
+    input{
+        margin-top: 20px;
+    }
+}
