@@ -55,7 +55,9 @@ const Booking = ({ tour, avgRating }) => {
     // e.preventDefault();
     try {
 
-      const key = await fetch('http://localhost:4000/getkey');
+      // const key = await fetch('http://localhost:4000/getkey');
+      const key = await fetch('https://travel-world-six4.onrender.com');
+
 
       // console.log("Good Morning", key)
 
