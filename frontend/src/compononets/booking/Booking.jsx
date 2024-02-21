@@ -110,11 +110,12 @@ const Booking = ({ tour, avgRating }) => {
         description: "Razorpay Integration",
         image: "https://avatars.githubusercontent.com/u/25058652?v=4",
         order_id: data.orderId,
-        callback_url: 'http://localhost:4000/api/v1/booking/paymentverification',
+        // callback_url: 'http://localhost:4000/api/v1/booking/paymentverification',
+        callback_url: 'https://travel-world-six4.onrender.com/api/v1/booking/paymentverification',
         prefill: {
-          "name": "Gaurav Kumar",
+          "name": "Amit Patel",
           "email": "gaurav.kumar@example.com",
-          "contact": "6355612098"
+          "contact": "6355612890"
         },
         notes: {
           "address": "Razorpay Corporate Office"
