@@ -3,8 +3,9 @@ const jwt = require('jsonwebtoken')
 const verifyToken = (req, res, next) => {
     // const token = req.cookies.accessToken
     // const token = getCookie("accessToken");
-    const token = localStorage.getItem("token");
-    console.log("Token is ",token)
+    // const token = localStorage.getItem("token");
+    const token=req.headers.authorization
+    // console.log("Token is anetg ",req.headers.authorization)
     if (!token) {
         return res.status(401).json({ success: false, message: "You are not authorized person" })
     }

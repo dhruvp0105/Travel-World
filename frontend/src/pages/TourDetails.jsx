@@ -58,16 +58,21 @@ const TourDetails = () => {
         navigate('/login')
       }
       else {
+
+        console.log("Get tojen",localStorage.getItem('token'))
+        const token=localStorage.getItem('token');
+
         const reviewObj = {
           username: user.username,
           reviewtext,
-          rating: tourRating
+          rating: tourRating,
         }
 
         const res = await fetch(`${BASE_URL}/review/${_id}`, {
           method: 'post',
           headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            'Authorization':token
           },
           credentials: 'include',
           body: JSON.stringify(reviewObj)

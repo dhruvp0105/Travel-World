@@ -16,6 +16,7 @@ const Header = () => {
     const { user, dispatch } = useContext(AuthContext)
 
     const logout = () => {
+        localStorage.clear();
         dispatch({ type: 'LOGOUT' })
         navigate('/')
     }

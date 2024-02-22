@@ -4,7 +4,7 @@ const tour = require("../models/tour");
 const createReview = async (req, res) => {
     const tourId = req.params.tourId;
     const newReview = new review({ ...req.body })
-    // console.log(req.body)
+    console.log("Tour body",req.body)
     try {
         const savedReview = await newReview.save();
         // console.log(savedReview)

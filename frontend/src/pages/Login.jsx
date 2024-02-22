@@ -38,7 +38,12 @@ const Login = () => {
       })
 
       const result = await res.json()
-      // console.log(result.data)
+      console.log(result.data)
+
+      //token ...
+      // console.log("Result is : ",result.token)
+      const token=result.token;
+      localStorage.setItem("token",token)
 
       if (!res.ok) {
         alert(result.message)
